@@ -1,0 +1,88 @@
+div {
+  $ten_px: 10px;
+
+  * {
+    color: darkblue;
+  }
+
+  textarea, input, select, button {
+    border:  none;
+    outline: none;
+    padding: $ten_px;
+  }
+
+  input, select, textarea {
+    border: 1px solid darkblue;
+  }
+
+  select {
+    width: 193px;
+  }
+
+  .circle-btn {
+    border-radius: 50%;
+    margin-bottom: 50px;
+    width: 60px;
+    height: 55px;
+  }
+
+  button {
+    width: 102px;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    background: darkblue;
+    box-shadow: 0px 2px 2px 0px #0000008f;
+  }
+
+  button:hover {
+    background-color: #0e0e9a;
+  }
+
+
+  ::placeholder {
+    color: darkblue;
+  }
+
+  .main-container {
+    padding: 0 70px;
+    margin-bottom: 50px;
+    display: inline-block;
+
+    .container {
+      position: relative;
+  
+      button.float-btn {
+        position: absolute;
+        top: 39px;
+        right: 0;
+      }
+
+      button.send {
+        top: 20px;
+      }
+    }
+  }
+
+  .vertical-border {
+    border-right: 1px solid darkblue;
+  }
+
+
+  .group-input {
+    width: 422px;
+    display: inline-grid;
+
+    label, select { 
+      text-align: left;
+      font-size: small;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 400px;
+      margin-left: 0px;
+    }
+  }
+}
