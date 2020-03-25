@@ -25,7 +25,7 @@ https://code.visualstudio.com/
 ### 3. Add Vue-js in VScode
 ```
 ### 3. Add Vue-js in VScode
-install Node.js if you haven't installed [Download](https://nodejs.org/en/)  
+install Node.js if you haven't installed [Download][https://nodejs.org/en/]
 $npm install -g @vue/cli
 
 Read More:
