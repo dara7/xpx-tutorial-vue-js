@@ -61,7 +61,7 @@ Install ProximaX Sirius SDK for JavaScript (optionnal if it require):
 npm install tsjs-xpx-chain-sdk rxjs
 npm run serve
 ```
-[Screenshot of xpx-tutorial-vue-js](https://photos.google.com/photo/AF1QipM9dJtRkcpirIiyp49w1E9AhEyEASx8kd5Huqvk)
+![Screenshot of xpx-tutorial-vue-js](https://photos.app.goo.gl/c3v54bi6xt6HzLmg9?raw=true)
 
 Read More: https://github.com/proximax-storage/tsjs-xpx-chain-sdk
 
