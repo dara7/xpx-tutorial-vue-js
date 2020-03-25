@@ -60,7 +60,7 @@ Read More:
 ```
 https://github.com/proximax-storage/tsjs-xpx-chain-sdk
 
-### 9. Help and references
+### 7. Help and references
 ProximaX Developers Chat Group at Telegram: https://t.me/proximax_devs
 
 ##### About ProximaX:
