@@ -23,16 +23,15 @@ g. Source code for this Wallet: https://github.com/dara7/xpx-tutorial-vue-js
 https://code.visualstudio.com/
 
 ### 3. Add Vue-js in VScode
-install Node.js if you haven not installed [Download](https://nodejs.org/en/)
+install Node.js if you haven not installed: [Download](https://nodejs.org/en/)
 ```
 $npm install -g @vue/cli
 ```
 Read More: https://code.visualstudio.com/docs/nodejs/vuejs-tutorial
 
 ### 4. Create your first Vue-js test App
-```
-### 4. Create your first Vue-js test App
-Create "vue-js" master directory, then 
+Create "vue-js" master directory, then
+``` 
 $cd vue-js
 $vue create test123
 $cd test123
