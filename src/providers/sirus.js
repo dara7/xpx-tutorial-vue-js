@@ -54,9 +54,7 @@ function sendTxn(sender, toAddress, mosaicId, amount, message = "") {
 
 
 function getTxn(publicKey) {
-    const pageSize = 10; 
-    // const publicAccount = accountInfo.publicAccount; 
-    // const publicAccount =  PublicAccount.createFromPublicKey(accountInfo.publicKey, NETWORK_TYPE);  
+    const pageSize = 10;   
     const publicAccount =  PublicAccount.createFromPublicKey(publicKey, NETWORK_TYPE);
     accountHttp.transactions(publicAccount, new QueryParams(pageSize)).subscribe(transactions => console.log(transactions), err => console.error(err));    
 }

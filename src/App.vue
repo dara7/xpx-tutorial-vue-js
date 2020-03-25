@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <SampleSdk msg="XPX-CHAIN-SDK"/>
+    <SampleSdk msg="xpx-vue-native-tutorial"/>
   </div>
 </template>
 

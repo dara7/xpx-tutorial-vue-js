@@ -15,7 +15,7 @@ function main() {
     return app;
 }
 
-
+/**** Data Binding ****/
 const app = {
     userName:    "",
     address:     "",
@@ -45,7 +45,6 @@ const app = {
 };
 
 
-// 0123456789012345678901234567890123456789012345678901234567890124
 const iddb = new IndexDbProvider();
 let   senderName, receiverName, user_Name;
 
@@ -154,7 +153,6 @@ async function getTxn() {
 
 function clear() {
     app.userName   = "";
-
     app.address    = "";
     app.publicKey  = "";
     app.privatekey = "";
@@ -164,11 +162,6 @@ function clear() {
 
     app.amtXPX  = "";
     app.message = "";
-
-    // app.firstSelectedSender   = true;
-    // app.firstSelectedReceiver = true;
-    // app.firstSelectedUserName = true;
-    // app.firstSelectedUserInfo = true;
 
     // location.reload();
 }
