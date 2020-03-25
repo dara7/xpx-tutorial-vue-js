@@ -25,39 +25,37 @@ https://code.visualstudio.com/
 ### 3. Add Vue-js in VScode
 install Node.js if you haven not installed: [Download](https://nodejs.org/en/)
 ```
-$npm install -g @vue/cli
+npm install -g @vue/cli
 ```
 Read More: https://code.visualstudio.com/docs/nodejs/vuejs-tutorial
 
 ### 4. Create your first Vue-js test App
 Create "vue-js" master directory, then
 ``` 
-$cd vue-js
-$vue create test123
-$cd test123
-$npm run serve
+cd vue-js
+vue create test123
+cd test123
+npm run serve
 ```
 
 ### 5. Download and run Demo, xpx-vue-native-tutorial
 ```
   a. Create "vue-js" master directory, then >cd vue-js.
   b. At "vue-js" directory, download demo source code: 
-      $git clone https://github.com/dara7/xpx-tutorial-vue-js.git
+      git clone https://github.com/dara7/xpx-tutorial-vue-js.git
   c. In VScode open "xpx-tutorial-vue-js" project or just change directory to: 
-      $cd xpx-tutorial-vue-js 
+      cd xpx-tutorial-vue-js 
 ```
 ### 6. Project setup
 ```
-$npm install
-{install all node_modules and library as in package.json}
+npm install
+(install all node_modules and library as in package.json)
 
 Install ProximaX Sirius SDK for JavaScript (option):
-$npm install tsjs-xpx-chain-sdk rxjs
-{only require if it is not install automatically by "npm install"}
-
-Read More:
+npm install tsjs-xpx-chain-sdk rxjs
+(only require if it is not install automatically by "npm install")
 ```
-https://github.com/proximax-storage/tsjs-xpx-chain-sdk
+Read More: https://github.com/proximax-storage/tsjs-xpx-chain-sdk
 
 ### 7. Help and references
 ProximaX Developers Chat Group at Telegram: https://t.me/proximax_devs
