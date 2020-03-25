@@ -52,15 +52,17 @@ c. In VScode open "xpx-tutorial-vue-js" project or just change directory to:
 cd xpx-tutorial-vue-js 
 ```
 ### 6. Project setup
+install all node_modules and library as in package.json
 ```
 npm install
-(install all node_modules and library as in package.json)
-
-Install ProximaX Sirius SDK for JavaScript (option):
+```
+Install ProximaX Sirius SDK for JavaScript (optionnal if it require):
+```
 npm install tsjs-xpx-chain-sdk rxjs
-(only require if it is not install automatically by "npm install")
+npm run serve
 ```
 Read More: https://github.com/proximax-storage/tsjs-xpx-chain-sdk
+![Screenshot](https://photos.google.com/photo/AF1QipM9dJtRkcpirIiyp49w1E9AhEyEASx8kd5Huqvk raw=true)
 
 ### 7. Help and references
 ProximaX Developers Chat Group at Telegram: https://t.me/proximax_devs
