@@ -23,9 +23,8 @@ g. Source code for this Wallet: https://github.com/dara7/xpx-tutorial-vue-js
 https://code.visualstudio.com/
 
 ### 3. Add Vue-js in VScode
-[Download](https://nodejs.org/en/)
+install Node.js if you haven not installed [Download](https://nodejs.org/en/)
 ```
-### 3. Add Vue-js in VScode
 install Node.js if you haven't installed 
 $npm install -g @vue/cli
 
