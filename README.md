@@ -39,12 +39,14 @@ npm run serve
 ```
 
 ### 5. Download and run Demo, xpx-vue-native-tutorial
-```
   a. Create "vue-js" master directory, then >cd vue-js.
-  b. At "vue-js" directory, download demo source code: 
-      git clone https://github.com/dara7/xpx-tutorial-vue-js.git
+  b. At "vue-js" directory, download demo source code:
+```
+     git clone https://github.com/dara7/xpx-tutorial-vue-js.git
+```
   c. In VScode open "xpx-tutorial-vue-js" project or just change directory to: 
-      cd xpx-tutorial-vue-js 
+```
+     cd xpx-tutorial-vue-js 
 ```
 ### 6. Project setup
 ```
