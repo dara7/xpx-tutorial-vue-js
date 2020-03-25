@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <SampleSdk msg="xpx-vue-native-tutorial"/>
+    <SampleSdk msg="XPX-Tutorial-Vue-JS"/>
   </div>
 </template>
 

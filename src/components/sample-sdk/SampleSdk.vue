@@ -37,7 +37,7 @@
     </div>
   </div>
   <!--------------------Clear--------------------->
-  <button class="circle-btn" v-on:click="clear()">Clear</button>
+  <!-- <button class="circle-btn" v-on:click="clear()">Clear</button> -->
 
   <div class="parent">
     <!--------------------Send--------------------->
