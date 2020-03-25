@@ -63,7 +63,7 @@ npm run serve
 ```
 Read More: https://github.com/proximax-storage/tsjs-xpx-chain-sdk
 
-![Screenshot](https://photos.google.com/photo/AF1QipM9dJtRkcpirIiyp49w1E9AhEyEASx8kd5Huqvkraw=true)
+[Screenshot](https://photos.google.com/photo/AF1QipM9dJtRkcpirIiyp49w1E9AhEyEASx8kd5Huqvkraw=true)
 
 ### 7. Help and references
 ProximaX Developers Chat Group at Telegram: https://t.me/proximax_devs
