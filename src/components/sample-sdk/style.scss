@@ -26,6 +26,11 @@ div {
     height: 55px;
   }
 
+  .note {
+    p:first-child { margin-bottom: -10px; }
+    p { text-align: left; }
+  }
+
   button {
     width: 102px;
     color: white;
@@ -39,9 +44,8 @@ div {
     background-color: #0e0e9a;
   }
 
-
   ::placeholder {
-    color: darkblue;
+    color: #5f6caf;
   }
 
   .main-container {
@@ -67,7 +71,6 @@ div {
   .vertical-border {
     border-right: 1px solid darkblue;
   }
-
 
   .group-input {
     width: 422px;

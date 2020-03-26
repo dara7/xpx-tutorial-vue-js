@@ -22,7 +22,7 @@ function generateNewAccount() {
 }
 
 
-async function recoveryAccount(privateKey) {
+function recoveryAccount(privateKey) {
     const acc = Account.createFromPrivateKey(privateKey, NETWORK_TYPE);
     console.log("Account recoverd");
     return acc;
@@ -54,7 +54,7 @@ function sendTxn(sender, toAddress, mosaicId, amount, message = "") {
 
 
 function getTxn(publicKey) {
-    const pageSize = 10;   
+    const pageSize = 100;   
     const publicAccount =  PublicAccount.createFromPublicKey(publicKey, NETWORK_TYPE);
     accountHttp.transactions(publicAccount, new QueryParams(pageSize)).subscribe(transactions => console.log(transactions), err => console.error(err));    
 }
@@ -62,10 +62,6 @@ function getTxn(publicKey) {
 
 function getAccountInfoForAnAccount(address) {
     return new Promise((resolve, reject) => {
-        accountHttp.getAccountInfo(address).subscribe(accountInfo => resolve(accountInfo), 
-        error => {
-            alert("This account is not active");
-            reject(error);
-        });
+        accountHttp.getAccountInfo(address).subscribe(accountInfo => resolve(accountInfo), error => reject(error));
     });
 }

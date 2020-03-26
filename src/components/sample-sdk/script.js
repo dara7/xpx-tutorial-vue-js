@@ -1,5 +1,7 @@
-import { SirusProvider } from '../../providers/sirus';
+import { SirusProvider } from '../../providers/sirius';
 import { IndexDbProvider } from '../../providers/indexdb';
+import { Address } from 'tsjs-xpx-chain-sdk';
+import { NODE_URL } from '../../providers/node_url';
 
 
 export default {
@@ -17,6 +19,7 @@ function main() {
 
 /**** Data Binding ****/
 const app = {
+    nodes:  ['bctestnet3', 'bctestnet2', 'bctestnet1'],
     userName:    "",
     address:     "",
     publicKey:   "",
@@ -25,21 +28,25 @@ const app = {
     mosaicXpx:   "",
     accountInfo: "",
 
-    amtXPX:   "",
-    message:  "",
-    users:    [],
+    amtXPX:      "",
+    message:     "",
+    users:       [],
+    addrSearch:  "",
+    isMsgError:  false,
     firstSelectedSender:   true,
     firstSelectedReceiver: true,
     firstSelectedUserName: true,
     firstSelectedUserInfo: true,
 
+/**** Methode ***/
+    changeNode:     changeNode,
     changeUser:     changeUser,
     changeSender:   changeSender,
     changeReceiver: changeReceiver,
     changeUserInfo: changeUserInfo,
     
+    // clear:         clear,
     send:          send,
-    clear:         clear,
     getTxn:        getTxn,
     createAccount: createAccount,
 };
@@ -54,12 +61,23 @@ function setup() {
 }
 
 
-function createAccount(userName) {
+async function createAccount(userName) {
     if (!userName) return alert("Please enter user name!");
+    let state    =  await isUserCreatedAlready(userName);
 
-    const newAcc = SirusProvider.createAccount();
-    setData(newAcc, userName);
-    setUserNameInCombobox();
+    if(state) 
+        alert("This user already exit!");
+    else {
+        const newAcc = SirusProvider.createAccount();
+        setData(newAcc, userName);
+        setUserNameInCombobox();
+    }
+}
+
+
+async function isUserCreatedAlready(userName) {
+    const user = await iddb.getAllUser(userName); 
+    return user.length === 0 ? false : true;
 }
 
 
@@ -84,9 +102,22 @@ async function setData(newAcc, userName) {
 
 
 async function getAccountInFo(address) {
-    const accountInfo = await SirusProvider.getAccountInfo(address);
-    const accInfoJson = JSON.stringify(accountInfo);
-    const amtXPX      = accountInfo.mosaics[0].amount.compact() / Math.pow(10, 6);
+    let accountInfo = null;
+    let accInfoJson = "";
+    let amtXPX      = 0;
+
+    try {
+        app.isMsgError = false;
+        accountInfo = await SirusProvider.getAccountInfo(address);
+    } catch(err) {
+        app.isMsgError = true; 
+        alert("Account not Activated in Blockchain. Please send some xpx from your Testnet Wallet to this Account.");
+    }
+
+    if (!app.isMsgError) {
+        accInfoJson = JSON.stringify(accountInfo);
+        amtXPX      = accountInfo.mosaics[0].amount.compact() / Math.pow(10, 6);
+    }
 
     return { accInfoJson, amtXPX };
 }
@@ -110,14 +141,27 @@ function changeUser(evt) {
 }
 
 
-async function changeUserInfo(evt) {
-    if (app.firstSelectedUserInfo) app.firstSelectedUserInfo = false;
+function changeNode(evt) {
+    const node = evt.target.value.substr(-1);
+    NODE_URL.setNode(node);
+}
 
-    const userName  = evt.target.value;
-    const user      = await iddb.getAllUser(userName); 
-    const address   = (await SirusProvider.recoveryAccount(user[0].account)).address;
+
+async function changeUserInfo(evt, component="") {
+    let address = "";
+    if (component == 'button') {
+        address = evt;
+        address =  new Address(address);
+    } else {
+        if (app.firstSelectedUserInfo) app.firstSelectedUserInfo = false;
+
+        const userName  = evt.target.value;
+        const user      = await iddb.getAllUser(userName); 
+        address         = (await SirusProvider.recoveryAccount(user[0].account)).address;
+        app.addrSearch  = address.plain();
+    }
+
     const accInfo   = await getAccountInFo(address);
-
     app.mosaicXpx   = accInfo.amtXPX;
     app.accountInfo = accInfo.accInfoJson;
 }
@@ -151,17 +195,17 @@ async function getTxn() {
 }
 
 
-function clear() {
-    app.userName   = "";
-    app.address    = "";
-    app.publicKey  = "";
-    app.privatekey = "";
+// function clear() {
+//     app.userName   = "";
+//     app.address    = "";
+//     app.publicKey  = "";
+//     app.privatekey = "";
 
-    app.mosaicXpx   = "";
-    app.accountInfo = "";
+//     app.mosaicXpx   = "";
+//     app.accountInfo = "";
 
-    app.amtXPX  = "";
-    app.message = "";
+//     app.amtXPX  = "";
+//     app.message = "";
 
-    // location.reload();
-}
+//     // location.reload();
+// }
